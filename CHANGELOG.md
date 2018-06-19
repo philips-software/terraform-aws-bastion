@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+- Slack badge in documentation
 - Fixed bug: Properly insert user data into ECS instance
 - Updates to support terraform 0.11
 - Replace default image map bay latest amazon linux

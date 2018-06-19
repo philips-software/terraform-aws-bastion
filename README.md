@@ -53,3 +53,21 @@ module "bastion" {
 |------|-------------|
 | instance_id | Id of the created instance. |
 | public_ip | Publip ip of the created instance. |
+
+## Philips Forest
+
+This module is part of the Philips Forest.
+
+```
+                                                     ___                   _
+                                                    / __\__  _ __ ___  ___| |_
+                                                   / _\/ _ \| '__/ _ \/ __| __|
+                                                  / / | (_) | | |  __/\__ \ |_
+                                                  \/   \___/|_|  \___||___/\__|  
+
+                                                                 Infrastructure
+```
+
+Talk to the forestkeepers in the `forest`-channel on Slack.
+
+[![Slack](https://philips-software-slackin.now.sh/badge.svg)](https://philips-software-slackin.now.sh)
