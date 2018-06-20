@@ -1,12 +1,12 @@
 # Terraform bastion module
 
-Module to create a bastion host.
+Module to create a bastion host (or stepping stone). The module let you enable this host once needed. Be default the host is not created.
 
 ## Example usages:
 See also a full example in the `test` directory
 ```
 module "vpc" {
-  source  = "github.com/philips-software/terraform-aws-vpc"
+  source  = "philips-software/vpc/aws"
   version = "1.0.0"
 
   environment = "${var.environment}"
@@ -17,6 +17,8 @@ module "vpc" {
 module "bastion" {
   source  = "github.com/philips-software/terraform-aws-bastion"
   version = "1.0.0"
+
+  enable_bastion = "true"
 
   environment = "${var.environment}"
   project     = "${var.project}"

@@ -35,7 +35,7 @@ variable "subnet_id" {
 }
 
 variable "enable_bastion" {
-  description = "If true the bastion will be created."
+  description = "If true the bastion will be created. Be default the bastion host is not running, needs explicit set to true."
   default     = false
 }
 

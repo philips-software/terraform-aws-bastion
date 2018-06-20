@@ -1,6 +1,6 @@
 # Terraform bastion test
 
-### Create keys
+### Generate ssh keys
 ```
 source ./init.sh
 ```
