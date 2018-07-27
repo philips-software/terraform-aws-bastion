@@ -18,11 +18,10 @@ resource "aws_security_group" "ami" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags {
-    Name        = "${var.environment}-bastion-sg"
-    Environment = "${var.environment}"
-    Project     = "${var.project}"
-  }
+  tags = "${merge(map("Name", format("%s-bastion-sg", var.environment)),
+          map("Environment", format("%s", var.environment)),
+          map("Project", format("%s", var.project)),
+          var.tags)}"
 }
 
 data "aws_ami" "aws_optimized_ami" {
@@ -67,9 +66,8 @@ resource "aws_instance" "instance" {
   key_name                    = "${var.key_name}"
   user_data                   = "${var.user_data == "" ? data.template_file.user_data.rendered : var.user_data}"
 
-  tags {
-    Name        = "${var.environment}-bastion"
-    Environment = "${var.environment}"
-    Project     = "${var.project}"
-  }
+  tags = "${merge(map("Name", format("%s-bastion", var.environment)),
+          map("Environment", format("%s", var.environment)),
+          map("Project", format("%s", var.project)),
+          var.tags)}"
 }
