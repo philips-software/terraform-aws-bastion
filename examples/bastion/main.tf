@@ -43,4 +43,8 @@ module "bastion_custom" {
     us-east-1 = "ami-a4c7edb2" # N. Virginia
     eu-west-1 = "ami-d7b9a2b1" # Ireland
   }
+
+  tags = {
+    my-tag = "my-new-tag"
+  }
 }
