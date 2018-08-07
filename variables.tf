@@ -61,3 +61,9 @@ variable "user_data" {
   type        = "string"
   default     = ""
 }
+
+variable "tags" {
+  type        = "map"
+  description = "Map of tags to apply on the resources"
+  default     = {}
+}

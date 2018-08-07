@@ -28,6 +28,10 @@ module "bastion" {
   subnet_id = "${element(module.vpc.public_subnets, 0)}"
   vpc_id = "${module.vpc.vpc_id}"
 
+  // add aditional tags
+  tags = {
+    my-tag = "my-new-tag"
+  }
 }
 
 ```
@@ -48,6 +52,7 @@ module "bastion" {
 | project | Name of the project. | string | - | yes |
 | subnet_id | Subnet in which the basion needs to be deployed. | string | - | yes |
 | vpc_id | The VPC to launch the instance in (e.g. vpc-66ecaa02). | string | - | yes |
+| tags | Map of tags to apply on the resources | map | `{}` | no |
 
 ## Outputs
 
