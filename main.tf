@@ -70,4 +70,9 @@ resource "aws_instance" "instance" {
           map("Environment", format("%s", var.environment)),
           map("Project", format("%s", var.project)),
           var.tags)}"
+
+  volume_tags = "${merge(map("Name", format("%s-bastion", var.environment)),
+                 map("Environment", format("%s", var.environment)),
+                 map("Project", format("%s", var.project)),
+                 var.tags)}"
 }
