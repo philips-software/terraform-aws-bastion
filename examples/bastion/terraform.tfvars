@@ -4,4 +4,4 @@ environment = "bastion-test"
 
 project = "Forest"
 
-aws_region = "eu-west-1"
+aws_region = "us-east-1"
