@@ -9,7 +9,8 @@ Module to create a bastion host (or stepping stone). The module let you enable t
 
 
 ## Example usages:
-See also a full example in the `test` directory
+See also the [full examples](./examples).
+
 ```
 
 module "vpc" {
@@ -65,6 +66,17 @@ module "bastion" {
 | instance\_id | Id of the created instance. |
 | public\_ip | Public ip of the created instance. |
 
+## Automated checks
+Currently the automated checks are limited. In CI the following checks are done for the root and each example.
+- lint: `terraform validate` and `terraform fmt`
+- basic init / get check: `terraform init -get -backend=false -input=false`
+
+## Generation variable documentation
+A markdown table for variables can be generated as follow. Generation requires awk and terraform-docs installed.
+
+```
+ .ci/bin/terraform-docs.sh markdown
+```
 
 ## Philips Forest
 
