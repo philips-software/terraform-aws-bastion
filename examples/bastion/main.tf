@@ -1,8 +1,13 @@
+# required to due to https://github.com/hashicorp/terraform/issues/21330
+# otherwise the terraform operation will fail with 
+# -> The argument "region" is required, but was not set.
+provider "aws" {
+  version = "~> 2.0"
+  region  = var.aws_region
+}
+
 module "vpc" {
   source = "git::https://github.com/philips-software/terraform-aws-vpc.git?ref=terraform012"
-
-  # source  = "philips-software/vpc/aws"
-  # version = "1.0.0"
 
   environment = var.environment
   aws_region  = var.aws_region
@@ -13,7 +18,6 @@ resource "aws_key_pair" "bastion_key" {
   key_name   = var.key_name
   public_key = file(var.ssh_key_file_bastion)
 }
-
 
 # Default bastion
 module "bastion" {
