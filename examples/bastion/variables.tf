@@ -1,21 +1,21 @@
 variable "aws_region" {
   description = "The Amazon region"
-  type        = "string"
+  type        = string
 }
 
 variable "project" {
   description = "Name of the project"
-  type        = "string"
+  type        = string
 }
 
 variable "environment" {
   description = "Logical name of the environment"
-  type        = "string"
+  type        = string
 }
 
 variable "key_name" {
   description = "SSH key name for the environment"
-  type        = "string"
+  type        = string
 }
 
 variable "ssh_key_file_bastion" {
@@ -27,3 +27,4 @@ variable "enable_bastion" {
   description = "Enable a bastion host"
   default     = "true"
 }
+
