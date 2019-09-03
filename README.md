@@ -4,8 +4,8 @@ Module to create a bastion host (or stepping stone). The module let you enable t
 
 ## Terraform version
 
-- Terraform 0.12: Pin module to `~> 2+`, submit pull request to branch `terrafomr012`
-- Terraform 0.11: Pin module to `~> 1.x`, submit pull request to branch `develop`
+- Terraform 0.12: Pin module to `~> 2+`, submit pull request to branch `develop`
+- Terraform 0.11: Pin module to `~> 1.x`, submit pull request to branch `terrafomr011`
 
 
 ## Example usages:
@@ -14,7 +14,7 @@ See also the [full examples](./examples).
 ```
 
 module "vpc" {
-  source = "git::https://github.com/philips-software/terraform-aws-vpc.git?ref=terraform012"
+  source = "git::https://github.com/philips-software/terraform-aws-vpc.git?ref=develop"
 
   environment = var.environment
   aws_region  = var.aws_region
@@ -22,7 +22,7 @@ module "vpc" {
 
 # Default bastion
 module "bastion" {
-  source = "git::https://github.com/philips-software/terraform-aws-bastion.git?ref=terraform012"
+  source = "git::https://github.com/philips-software/terraform-aws-bastion.git?ref=develop"
   enable_bastion = true
 
   environment = var.environment
@@ -43,28 +43,28 @@ module "bastion" {
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| admin\_cidr | CIDR pattern to access the bastion host | string | `"0.0.0.0/0"` | no |
-| amazon\_optimized\_amis | Map from region to AMI. By default the latest Amazon Linux is used. | map(string) | `<map>` | no |
-| aws\_region | The Amazon region. | string | n/a | yes |
-| ebs\_optimized | If true, the launched EC2 instance will be EBS-optimized. | bool | `"false"` | no |
-| enable\_bastion | If true the bastion will be created. Be default the bastion host is not running, needs explicit set to true. | bool | `"false"` | no |
-| environment | Logical name of the environment. | string | n/a | yes |
-| instance\_type | EC2 instance type. | string | `"t2.micro"` | no |
-| key\_name | SSH key name for the environment. | string | n/a | yes |
-| project | Name of the project. | string | n/a | yes |
-| subnet\_id | Subnet in which the basion needs to be deployed. | string | n/a | yes |
-| tags | Map of tags to apply on the resources | map(string) | `<map>` | no |
-| user\_data | Used data for bastion EC2 instance | string | `""` | no |
-| vpc\_id | The VPC to launch the instance in (e.g. vpc-66ecaa02). | string | n/a | yes |
+| Name                    | Description                                                                                                  |    Type     |    Default    | Required |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------ | :---------: | :-----------: | :------: |
+| admin\_cidr             | CIDR pattern to access the bastion host                                                                      |   string    | `"0.0.0.0/0"` |    no    |
+| amazon\_optimized\_amis | Map from region to AMI. By default the latest Amazon Linux is used.                                          | map(string) |    `<map>`    |    no    |
+| aws\_region             | The Amazon region.                                                                                           |   string    |      n/a      |   yes    |
+| ebs\_optimized          | If true, the launched EC2 instance will be EBS-optimized.                                                    |    bool     |   `"false"`   |    no    |
+| enable\_bastion         | If true the bastion will be created. Be default the bastion host is not running, needs explicit set to true. |    bool     |   `"false"`   |    no    |
+| environment             | Logical name of the environment.                                                                             |   string    |      n/a      |   yes    |
+| instance\_type          | EC2 instance type.                                                                                           |   string    | `"t2.micro"`  |    no    |
+| key\_name               | SSH key name for the environment.                                                                            |   string    |      n/a      |   yes    |
+| project                 | Name of the project.                                                                                         |   string    |      n/a      |   yes    |
+| subnet\_id              | Subnet in which the basion needs to be deployed.                                                             |   string    |      n/a      |   yes    |
+| tags                    | Map of tags to apply on the resources                                                                        | map(string) |    `<map>`    |    no    |
+| user\_data              | Used data for bastion EC2 instance                                                                           |   string    |     `""`      |    no    |
+| vpc\_id                 | The VPC to launch the instance in (e.g. vpc-66ecaa02).                                                       |   string    |      n/a      |   yes    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| instance\_id | Id of the created instance. |
-| public\_ip | Public ip of the created instance. |
+| Name         | Description                        |
+| ------------ | ---------------------------------- |
+| instance\_id | Id of the created instance.        |
+| public\_ip   | Public ip of the created instance. |
 
 ## Automated checks
 Currently the automated checks are limited. In CI the following checks are done for the root and each example.
@@ -75,7 +75,7 @@ Currently the automated checks are limited. In CI the following checks are done 
 A markdown table for variables can be generated as follow. Generation requires awk and terraform-docs installed.
 
 ```
- .ci/bin/terraform-docs.sh markdown
+ .ci/bin/terraform-docs.sh markdown .
 ```
 
 ## Philips Forest
