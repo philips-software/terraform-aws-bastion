@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.0.0] - 03-09-2019
+- Migration to Terraform 0.12
+
 ## [1.2.0] - 02-07-2019
 - Add tags for attached volumes @kdelaat 
 
@@ -17,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Cleanup and update test sample
 - Add extra input variable tags, for tagging resources
 
-[Unreleased]: https://github.com/philips-software/terraform-aws-bastion/compare/1.2.0...HEAD
+[Unreleased]: https://github.com/philips-software/terraform-aws-bastion/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/philips-software/terraform-aws-bastion/compare/1.2.0...2.0.0
 [1.2.0]: https://github.com/philips-software/terraform-aws-bastion/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/philips-software/terraform-aws-bastion/compare/1.0.0...1.1.0
