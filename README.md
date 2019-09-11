@@ -14,7 +14,7 @@ See also the [full examples](./examples).
 ```
 
 module "vpc" {
-  source = "git::https://github.com/philips-software/terraform-aws-vpc.git?ref=develop"
+  source = "git::https://github.com/philips-software/terraform-aws-vpc?ref=2.0.0"
 
   environment = var.environment
   aws_region  = var.aws_region
@@ -22,7 +22,7 @@ module "vpc" {
 
 # Default bastion
 module "bastion" {
-  source = "git::https://github.com/philips-software/terraform-aws-bastion.git?ref=develop"
+  source = "git::https://github.com/philips-software/terraform-aws-bastion?ref=2.0.0"
   enable_bastion = true
 
   environment = var.environment
